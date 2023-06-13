@@ -1,5 +1,5 @@
-export const WIDTH = screen.availWidth;
-export const HEIGHT = screen.availHeight;
+export const WIDTH = 1280;
+export const HEIGHT = 832;
 export const FIGMA_FRAME_WIDTH = 1280;
 export const FIGMA_FRAME_HEIGHT = 832;
 

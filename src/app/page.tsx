@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import styled from "styled-components";
 import CategoryList from "../components/Category/CategoryList";
@@ -8,7 +10,7 @@ import BlogHeader from "../components/Header/BlogHeader";
 import { useSelector } from "react-redux";
 import { type RootState } from "../modules";
 
-export default function MainPage() {
+export default function App() {
   const setting = useSelector((state: RootState) => state.setting);
   return (
     <PageStyled>
