@@ -1,5 +1,9 @@
+"use client";
+
+import { ThemeProvider } from "styled-components";
 import RootStyleRegistry from "../../lib/RootStyleRegistry";
 import { Providers } from "./providers";
+import theme from "@/styles/theme";
 
 export default function RootLayout({
   children,
@@ -8,9 +12,11 @@ export default function RootLayout({
 }) {
   return (
     <html>
-      <body>
+      <body style={{ margin: 0 }}>
         <Providers>
-          <RootStyleRegistry>{children}</RootStyleRegistry>
+          <ThemeProvider theme={theme}>
+            <RootStyleRegistry>{children}</RootStyleRegistry>
+          </ThemeProvider>
         </Providers>
       </body>
     </html>
