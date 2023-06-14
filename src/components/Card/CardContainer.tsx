@@ -1,26 +1,36 @@
 import React from "react";
 import styled from "styled-components";
-import { getWidthPixel } from "../../utils/responsive";
 import Card from ".";
 import Blank from "../Blank";
 
 export default function CardContainer() {
   return (
-    <ContainerStyled>
-      <Card width={getWidthPixel(400)} height={getWidthPixel(350)} />
-      <Card width={getWidthPixel(400)} height={getWidthPixel(350)} />
-      <Card width={getWidthPixel(400)} height={getWidthPixel(350)} />
-      <Card width={getWidthPixel(400)} height={getWidthPixel(350)} />
-      <Card width={getWidthPixel(400)} height={getWidthPixel(350)} />
-      <Card width={getWidthPixel(400)} height={getWidthPixel(350)} />
-      <Card width={getWidthPixel(400)} height={getWidthPixel(350)} />
-      <BlankCard width={getWidthPixel(400)} height={getWidthPixel(350)} />
-    </ContainerStyled>
+    <CenterStyled>
+      <ContainerStyled>
+        <Card width={"400px"} height={"350px"} />
+        <Card width={"400px"} height={"350px"} />
+        <Card width={"400px"} height={"350px"} />
+        <Card width={"400px"} height={"350px"} />
+        <Card width={"400px"} height={"350px"} />
+        <Card width={"400px"} height={"350px"} />
+        <Card width={"400px"} height={"350px"} />
+        <BlankCard width={"400px"} height={"350px"} />
+        <BlankCard width={"400px"} height={"350px"} />
+        <BlankCard width={"400px"} height={"350px"} />
+        <BlankCard width={"400px"} height={"350px"} />
+      </ContainerStyled>
+    </CenterStyled>
   );
 }
 
+const CenterStyled = styled.div`
+  width: 85vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+`;
+
 const ContainerStyled = styled.div`
-  width: ${getWidthPixel(1000)};
   height: 100vh;
   display: flex;
   flex-flow: row wrap;
@@ -32,5 +42,5 @@ const ContainerStyled = styled.div`
 `;
 
 const BlankCard = styled(Blank)`
-  margin: ${getWidthPixel(10)};
+  margin: 10px;
 `;

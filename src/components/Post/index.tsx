@@ -3,12 +3,11 @@ import styled from "styled-components";
 import { type PostProps } from "../../constants/types";
 import TextBox from "../TextBox";
 import Blank from "../Blank";
-import { getHeightPixel } from "../../utils/responsive";
 
 export default function Post(PostInfo: PostProps) {
   return (
     <ContainerStyled>
-      <Blank height={getHeightPixel(20)} />
+      <Blank height={"20px"} />
       <TitleContainerStyled>
         <TextBox fontSize="2.5rem">{PostInfo.title}</TextBox>
       </TitleContainerStyled>

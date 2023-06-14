@@ -1,12 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import TextBox from "../TextBox";
-import { getHeightPixel, getWidthPixel } from "../../utils/responsive";
 import { palette } from "../../constants/palette";
 import { useDispatch } from "react-redux";
 import { setCategory, setPost } from "../../modules/setting";
 
-import BookMarkIcon from "../../../public/icons/main_logo.svg";
+import BookMarkIcon from "../../../public/icons/bookmark.svg";
 
 export default function Category({
   idx,
@@ -32,14 +31,13 @@ export default function Category({
       >
         {title}
       </TextBox>
-      {isSelected ? <IconStyled src={BookMarkIcon} /> : null}
+      {isSelected ? <IconStyled /> : null}
     </BoxStyled>
   );
 }
 
 const BoxStyled = styled.div`
   width: 100%;
-  height: ${getHeightPixel(66)};
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -48,12 +46,17 @@ const BoxStyled = styled.div`
   &:hover {
     background-color: #f3f3f3;
   }
+  @media ${(props) => props.theme.desktop} {
+    height: 70px;
+  }
 `;
 
-const IconStyled = styled.img`
-  width: ${getWidthPixel(30)};
-  height: ${getWidthPixel(30)};
+const IconStyled = styled(BookMarkIcon)`
   position: absolute;
-  right: -${getWidthPixel(10)};
-  margin-top: ${getWidthPixel(8)};
+  @media ${(props) => props.theme.desktop} {
+    width: 30px;
+    height: 30px;
+    right: -5px;
+    margin-top: 8px;
+  }
 `;

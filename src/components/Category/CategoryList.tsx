@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import Category from ".";
-import { getWidthPixel } from "../../utils/responsive";
 import { useSelector, useDispatch } from "react-redux";
 import { type RootState } from "../../modules";
 import { CATEGORY_LIST } from "../../constants/settings";
@@ -15,7 +14,6 @@ export default function CategoryList() {
   return (
     <ContainerStyled>
       <LogoStyled
-        src={MainLogo}
         onClick={() => {
           dispatch(setCategory(0));
           dispatch(setPost(false));
@@ -41,10 +39,13 @@ export default function CategoryList() {
 const ContainerStyled = styled.div`
   display: flex;
   flex-direction: column;
-  width: ${getWidthPixel(260)};
   height: 100vh;
   box-shadow: 4px 0px 4px 0px #0000004d;
   align-items: center;
+
+  @media ${(props) => props.theme.desktop} {
+    width: 300px;
+  }}
 `;
 
 const ListContainerStyled = styled.div`
@@ -54,15 +55,19 @@ const ListContainerStyled = styled.div`
   width: 100%;
 `;
 
-const LogoStyled = styled.img`
-  width: ${getWidthPixel(130)};
-  height: ${getWidthPixel(130)};
-  margin: ${getWidthPixel(30)};
+const LogoStyled = styled(MainLogo)`
+  @media ${(props) => props.theme.desktop} {
+    width: 150px;
+    height: 150px;
+    margin: 30px;
+  }}
 `;
 
 const DividerStyled = styled.div`
-  width: ${getWidthPixel(180)};
   border: 1px solid #a9a9a9;
   margin-bottom: 20vh;
   border-radius: 1px;
+  @media ${(props) => props.theme.desktop} {
+    width: 200px;
+  }
 `;

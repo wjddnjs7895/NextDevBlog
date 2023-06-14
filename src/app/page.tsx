@@ -5,7 +5,6 @@ import styled from "styled-components";
 import CategoryList from "../components/Category/CategoryList";
 import PostContainer from "../components/Post/PostContainer";
 import CardContainer from "../components/Card/CardContainer";
-import { getWidthPixel } from "../utils/responsive";
 import BlogHeader from "../components/Header/BlogHeader";
 import { useSelector } from "react-redux";
 import { type RootState } from "../modules";
@@ -40,7 +39,7 @@ const PageStyled = styled.div`
 const RowStyled = styled.div`
   display: flex;
   flex-direction: row;
-  width: ${getWidthPixel(1280)};
+  width: 100vw;
 `;
 
 const ColStyled = styled.div`

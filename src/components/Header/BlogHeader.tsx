@@ -1,21 +1,20 @@
 import React from "react";
 import styled from "styled-components";
-import { getHeightPixel } from "../../utils/responsive";
 import TextBox from "../TextBox";
 
 export default function BlogHeader() {
   return (
     <HeaderStyled>
-      <TextBoxStyled fontSize={getHeightPixel(30)}>Dev Blog</TextBoxStyled>
+      <TextBoxStyled fontSize={"2rem"}>Dev Blog</TextBoxStyled>
     </HeaderStyled>
   );
 }
 
 const HeaderStyled = styled.div`
   width: 100%;
-  height: ${getHeightPixel(50)};
+  height: 4rem;
 `;
 
 const TextBoxStyled = styled(TextBox)`
-  padding-left: ${getHeightPixel(10)};
+  padding-left: 10px;
 `;
