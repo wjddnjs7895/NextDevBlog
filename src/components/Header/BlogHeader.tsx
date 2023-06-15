@@ -11,7 +11,7 @@ export default function BlogHeader() {
 }
 
 const HeaderStyled = styled.div`
-  width: 100%;
+  width: 85vw;
   height: 4rem;
 `;
 

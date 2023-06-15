@@ -11,7 +11,7 @@ export default function PostContainer() {
 }
 
 const ContainerStyled = styled.div`
-  width: 100%;
+  width: 85vw;
   overflow: scroll;
   &::-webkit-scrollbar {
     display: none;
