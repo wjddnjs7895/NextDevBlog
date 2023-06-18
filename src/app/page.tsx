@@ -8,24 +8,28 @@ import CardContainer from "../components/Card/CardContainer";
 import BlogHeader from "../components/Header/BlogHeader";
 import { useSelector } from "react-redux";
 import { type RootState } from "../modules";
+import { useIsMobile } from "@/utils/hooks";
 
 export default function App() {
+  const isMobile = useIsMobile();
   const setting = useSelector((state: RootState) => state.setting);
   return (
     <PageStyled>
-      <RowStyled>
-        <CategoryList />
-        {setting.isPost ? (
-          <ColStyled>
-            <PostContainer />
-          </ColStyled>
-        ) : (
-          <ColStyled>
-            <BlogHeader />
-            <CardContainer />
-          </ColStyled>
-        )}
-      </RowStyled>
+      {isMobile ? null : (
+        <RowStyled>
+          <CategoryList />
+          {setting.isPost ? (
+            <ColStyled>
+              <PostContainer />
+            </ColStyled>
+          ) : (
+            <ColStyled>
+              <BlogHeader />
+              <CardContainer />
+            </ColStyled>
+          )}
+        </RowStyled>
+      )}
     </PageStyled>
   );
 }
