@@ -6,8 +6,6 @@ import { useDispatch } from "react-redux";
 import { setCategory, setPost } from "../../modules/setting";
 
 import BookMarkIcon from "../../../public/icons/bookmark.svg";
-import { CATEGORY_LIST } from "@/constants/settings";
-import { useRouter } from "next/navigation";
 
 export default function Category({
   idx,
@@ -18,16 +16,12 @@ export default function Category({
   title: string;
   isSelected: boolean;
 }) {
-  const router = useRouter();
   const dispatch = useDispatch();
   return (
     <BoxStyled
       onClick={() => {
-        console.log("before");
         dispatch(setCategory(idx));
         dispatch(setPost(false));
-        router.push(CATEGORY_LIST[idx].uri);
-        console.log("after");
       }}
     >
       <TextBox
