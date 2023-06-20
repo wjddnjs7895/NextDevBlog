@@ -9,13 +9,19 @@ import BlogHeader from "../components/Header/BlogHeader";
 import { useSelector } from "react-redux";
 import { type RootState } from "../modules";
 import { useIsMobile } from "@/utils/hooks";
+import MobileHeader from "../components/Header/MobileHeader";
 
 export default function App() {
   const isMobile = useIsMobile();
   const setting = useSelector((state: RootState) => state.setting);
   return (
     <PageStyled>
-      {isMobile ? null : (
+      {isMobile ? (
+        <ColStyled>
+          <MobileHeader />
+          <CardContainer />
+        </ColStyled>
+      ) : (
         <RowStyled>
           <CategoryList />
           {setting.isPost ? (
@@ -48,6 +54,7 @@ const RowStyled = styled.div`
 
 const ColStyled = styled.div`
   display: flex;
+  justify-content: center;
   flex-direction: column;
   width: 100%;
 `;

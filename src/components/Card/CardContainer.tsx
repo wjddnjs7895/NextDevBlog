@@ -24,7 +24,7 @@ export default function CardContainer() {
 }
 
 const CenterStyled = styled.div`
-  width: 85vw;
+  width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
